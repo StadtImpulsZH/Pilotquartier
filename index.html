@@ -49,78 +49,55 @@
         .hero { padding: 220px 10% 100px; text-align: center; }
         h1 { font-family: 'Space Grotesk'; font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9; text-transform: uppercase; margin-bottom: 30px; }
 
-        /* --- MODERN PROJECT GRID WITH IMAGES --- */
+        /* --- PROJECTS --- */
         .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 0 5%; margin-bottom: 80px; }
-        
         .project-card { 
-            position: relative;
-            height: 500px;
-            border-radius: 40px; overflow: hidden;
+            position: relative; height: 500px; border-radius: 40px; overflow: hidden;
             display: flex; flex-direction: column; justify-content: flex-end;
-            padding: 40px; color: white; text-decoration: none;
-            transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            padding: 40px; color: white; text-decoration: none; transition: 0.5s;
         }
-        
-        .project-card img { 
-            position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; 
-            z-index: -2; transition: 0.6s; filter: brightness(0.7);
-        }
-        
-        .project-card::before {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-            z-index: -1;
-        }
-
-        .project-card:hover { transform: scale(0.98); }
+        .project-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: 0.6s; filter: brightness(0.7); }
+        .project-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); z-index: -1; }
         .project-card:hover img { transform: scale(1.1); filter: brightness(0.5); }
-
         .project-card h2 { font-family: 'Space Grotesk'; font-size: 2.5rem; line-height: 1.1; margin-bottom: 10px; }
         
         .card-actions { display: flex; gap: 12px; margin-top: 20px; }
-
-        .btn-inline {
-            padding: 12px 24px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; 
-            text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; cursor: pointer; text-decoration: none;
-        }
+        .btn-inline { padding: 12px 24px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; cursor: pointer; text-decoration: none; }
         .btn-white { background: white; color: var(--text); }
         .btn-lime { background: var(--lime); color: var(--text); }
-        .btn-inline:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* --- CREATIVE DETAIL LAYOUT --- */
+        /* --- DETAILS --- */
         .detail-container { display: none; padding: 120px 10%; border-top: 1px solid #eee; animation: slideUp 0.8s ease; background: #fff; }
         .detail-container.active { display: block; }
-
         @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
-
-        .detail-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; border-bottom: 2px solid var(--text); padding-bottom: 20px; }
-        .detail-header h2 { font-family: 'Space Grotesk'; font-size: clamp(2rem, 5vw, 4rem); text-transform: uppercase; line-height: 1; }
-
         .grid-story { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; margin-bottom: 80px; }
-        .story-content h3 { font-family: 'Space Grotesk'; font-size: 1.8rem; margin-bottom: 20px; color: var(--purple); }
-        .story-content p { font-size: 1.1rem; margin-bottom: 25px; opacity: 0.8; }
-
         .fact-box { background: var(--light-gray); padding: 40px; border-radius: 30px; }
-        .fact-item { margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
-        .fact-item span { display: block; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: var(--purple); }
-        .fact-item p { font-weight: 500; font-size: 1.2rem; }
 
-        /* --- CAROUSEL & SLIDER --- */
-        .carousel-container { width: 100vw; margin-left: calc(-10% - 20px); overflow-x: auto; display: flex; gap: 20px; padding: 40px 10%; scrollbar-width: none; }
-        .carousel-item { min-width: 350px; width: 40vw; aspect-ratio: 16/11; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); flex-shrink: 0; }
-        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+        /* --- MITWIRKEN (NEU) --- */
+        .cta-section { padding: 100px 10%; background: var(--light-gray); border-radius: 60px; margin: 40px 20px; }
+        .cta-container { max-width: 1000px; margin: 0 auto; }
+        .cta-tag { font-weight: 800; text-transform: uppercase; color: var(--purple); letter-spacing: 2px; font-size: 0.8rem; }
+        .cta-section h2 { font-family: 'Space Grotesk'; font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0 30px; line-height: 1; }
+        .cta-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: start; }
+        .cta-topics h3 { font-family: 'Space Grotesk'; font-size: 1.4rem; margin-bottom: 15px; }
+        .cta-steps { list-style: none; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .cta-steps li { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        .cta-contact { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .cta-contact a { display: block; font-weight: 800; color: var(--purple); text-decoration: none; font-size: 1.2rem; margin-bottom: 10px; }
 
-        .comparison-container { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 30px; overflow: hidden; margin: 40px 0; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
-        .after-image { position: absolute; inset: 0; width: 50%; overflow: hidden; border-right: 3px solid white; z-index: 2; }
-        .slider-input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; z-index: 4; cursor: ew-resize; }
-        .handle-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: white; border-radius: 50%; z-index: 3; display: flex; align-items: center; justify-content: center; pointer-events: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-
-        /* --- VISION SECTION --- */
+        /* --- VISION --- */
         .vision-section { padding: 100px 10%; background: var(--text); color: white; border-radius: 60px; margin: 20px; }
 
-        footer { padding: 80px; text-align: center; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px; }
+        .carousel-container { width: 100vw; margin-left: calc(-10% - 20px); overflow-x: auto; display: flex; gap: 20px; padding: 40px 10%; scrollbar-width: none; }
+        .carousel-item { min-width: 350px; width: 40vw; aspect-ratio: 16/11; border-radius: 30px; overflow: hidden; flex-shrink: 0; }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+        .comparison-container { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 30px; overflow: hidden; margin: 40px 0; }
+        .after-image { position: absolute; inset: 0; width: 50%; overflow: hidden; border-right: 3px solid white; z-index: 2; }
+        .slider-input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; z-index: 4; cursor: ew-resize; }
+        .handle-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: white; border-radius: 50%; z-index: 3; display: flex; align-items: center; justify-content: center; pointer-events: none; }
 
-        @media (max-width: 900px) { .projects-grid, .grid-story { grid-template-columns: 1fr; } .project-card { height: 400px; } }
+        footer { padding: 80px; text-align: center; font-size: 0.7rem; opacity: 0.4; letter-spacing: 2px; }
+        @media (max-width: 900px) { .projects-grid, .grid-story, .cta-grid, .cta-steps { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -130,6 +107,7 @@
         <nav>
             <ul>
                 <li><a href="#projekte">Projekte</a></li>
+                <li><a href="#mitwirken">Mitwirken</a></li>
                 <li><a href="#vision">Unsere Vision</a></li>
             </ul>
         </nav>
@@ -146,7 +124,7 @@
 
         <section id="projekte" class="projects-grid">
             <div class="project-card">
-                <img src="IMG_2052.jpeg" alt="Tauschpunkt Hintergrund">
+                <img src="IMG_2052.jpeg" alt="Tauschpunkt">
                 <span style="font-weight: 800; letter-spacing: 2px; font-size: 0.7rem;">PROJECT 01</span>
                 <h2>tauschpunkt.</h2>
                 <p style="opacity: 0.8; max-width: 400px;">Ein physischer Hub für Kreislaufwirtschaft und sozialen Austausch.</p>
@@ -157,7 +135,7 @@
             </div>
 
             <div class="project-card">
-                <img src="IMG_2031.png" alt="Playground Hintergrund">
+                <img src="IMG_2031.png" alt="Playground">
                 <span style="font-weight: 800; letter-spacing: 2px; font-size: 0.7rem;">PROJECT 02</span>
                 <h2>Playground<br>Binzallee</h2>
                 <p style="opacity: 0.8; max-width: 400px;">Klimaresiliente Umgestaltung durch schwebende Begrünung.</p>
@@ -169,64 +147,66 @@
         </section>
 
         <section id="details-tauschpunkt" class="detail-container">
-            <div class="detail-header">
-                <h2>tauschpunkt.</h2>
-                <span style="font-weight: 800; color: var(--purple);">Züri Netto-Null</span>
-            </div>
-            
+            <div class="detail-header"><h2>tauschpunkt.</h2><span style="font-weight: 800; color: var(--purple);">Züri Netto-Null</span></div>
             <div class="grid-story">
                 <div class="story-content">
                     <h3>Teilen statt Besitzen.</h3>
-                    <p>In einer Welt der begrenzten Ressourcen ist der „tauschpunkt.“ unser Statement für die Kreislaufwirtschaft. Er ist weit mehr als nur ein Regal – er fungiert als lebendiges Herzstück der Nachbarschaft.</p>
-                    <p>Hier zirkulieren Gegenstände des täglichen Gebrauchs, was nicht nur den CO2-Fussabdruck reduziert, sondern auch Menschen zusammenbringt, die sich sonst nie begegnet wären.</p>
+                    <p>In einer Welt der begrenzten Ressourcen ist der „tauschpunkt.“ unser Statement für die Kreislaufwirtschaft.</p>
                 </div>
                 <div class="fact-box">
                     <div class="fact-item"><span>Vision</span><p>Ressourcen-Sharing</p></div>
-                    <div class="fact-item"><span>Architektur</span><p>Modulare Holz-Glas-Konstruktion</p></div>
-                    <div class="fact-item"><span>Masse</span><p>5.0 x 3.0 Meter Impact</p></div>
                 </div>
             </div>
-            
             <div class="carousel-container">
                 <div class="carousel-item"><img src="IMG_2052.jpeg" alt="Render"></div>
                 <div class="carousel-item"><img src="IMG_2057.jpeg" alt="Modell"></div>
-                <div class="carousel-item"><img src="IMG_2053.jpeg" alt="Detailansicht"></div>
-                <div class="carousel-item"><img src="IMG_2054.jpeg" alt="Innenansicht"></div>
-            </div>
-
-            <div style="text-align: center; margin-top: 80px;">
-                <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2298" target="_blank" class="vote-btn-large" style="display: inline-block; padding: 25px 60px; background: var(--purple); color: white; border-radius: 100px; text-decoration: none; font-weight: 800; text-transform: uppercase;">Jetzt Voten & Projekt unterstützen</a>
             </div>
         </section>
 
         <section id="details-playground" class="detail-container">
-            <div class="detail-header">
-                <h2>Playground Binzallee.</h2>
-                <span style="font-weight: 800; color: var(--purple);">Climate Resilience</span>
-            </div>
-
+            <div class="detail-header"><h2>Playground Binzallee.</h2><span style="font-weight: 800; color: var(--purple);">Climate Resilience</span></div>
             <div class="grid-story">
                 <div class="story-content">
                     <h3>Die schwebende Oase.</h3>
-                    <p>Der Playground Binzallee transformiert einen hitzeanfälligen, versiegelten Innenhof in einen klimaaktiven Stadtraum. Unser Herzstück: Eine schwebende grüne Decke.</p>
-                    <p>Durch ein intelligentes Seilsystem in 6-7 Metern Höhe schafften wir eine natürliche Verschattung, die das Mikroklima spürbar kühlt. Gepaart mit Sportfeldern für Basketball und Boccia entsteht ein Raum für alle Generationen.</p>
+                    <p>Transformation eines hitzeanfälligen Innenhofs in einen klimaaktiven Stadtraum.</p>
                 </div>
                 <div class="fact-box">
                     <div class="fact-item"><span>Klima-Impact</span><p>Hitzeinsel-Reduktion</p></div>
-                    <div class="fact-item"><span>Biodiversität</span><p>Vertikale Kletterpflanzen</p></div>
-                    <div class="fact-item"><span>Aktivität</span><p>Multisport & Begegnung</p></div>
                 </div>
             </div>
-
             <div class="comparison-container">
                 <div style="position: absolute; inset: 0;"><img src="IMG_2032.png" style="width:100%; height:100%; object-fit:cover;"></div>
                 <div class="after-image" id="after-box"><img src="IMG_2031.png" style="width:90vw; max-width:1200px; height:100%; object-fit:cover;"></div>
-                <div class="handle-circle" id="handle"><svg width="20" viewBox="0 0 24 24" fill="var(--purple)"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></div>
                 <input type="range" min="0" max="100" value="50" class="slider-input" oninput="moveSlider(this.value)">
             </div>
+        </section>
 
-            <div style="text-align: center; margin-top: 80px;">
-                <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2334" target="_blank" style="display: inline-block; padding: 25px 60px; background: var(--purple); color: white; border-radius: 100px; text-decoration: none; font-weight: 800; text-transform: uppercase;">Jetzt Voten & Projekt unterstützen</a>
+        <section id="mitwirken" class="cta-section">
+            <div class="cta-container">
+                <span class="cta-tag">Open Space Impulse St. Zürich</span>
+                <h2>Stadt.Impulzh</h2>
+                <div class="cta-grid">
+                    <div class="cta-topics">
+                        <p style="font-size: 1.3rem; margin-bottom: 30px; font-weight: 500;">
+                            Hast Du etwas in Deinem Kreis oder Quartier neu-weiter-zuende-gedacht? Mehr Potenzial erkannt?
+                        </p>
+                        <h3>Bringe Deine Idee zu Themen wie:</h3>
+                        <p style="opacity: 0.7; margin-bottom: 20px;">Gestaltung. Begegnung. Klima. Qualität. Bewegung. Mobilität. Sozialprojekte. Unterhaltung. Uvm..</p>
+                        <p style="font-style: italic; color: var(--purple);">Züri mitentwickle und präge, jede Ahstoss zellt zumne no bessere Züri</p>
+                        
+                        <ul class="cta-steps">
+                            <li><span>👉</span> Teile Deine Vision</li>
+                            <li><span>👉</span> Erwecke Faszination</li>
+                            <li><span>👉</span> Finde Mitbestreiter</li>
+                            <li><span>👉</span> Präge das Stadtleben</li>
+                        </ul>
+                    </div>
+                    <div class="cta-contact">
+                        <p style="text-transform: uppercase; font-size: 0.7rem; font-weight: 800; margin-bottom: 15px; letter-spacing: 1px;">Kontakt & Socials</p>
+                        <a href="mailto:stadt@impulzh.com">stadt@impulzh.com</a>
+                        <p style="font-weight: 700; color: var(--text);">@stadtimpulzh.ch</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -247,10 +227,8 @@
             target.classList.add('active');
             target.scrollIntoView({ behavior: 'smooth' });
         }
-
         function moveSlider(val) {
             document.getElementById('after-box').style.width = val + "%";
-            document.getElementById('handle').style.left = val + "%";
         }
     </script>
 </body>
