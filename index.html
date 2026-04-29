@@ -76,7 +76,7 @@
         .btn-white { background: white; color: var(--text); }
         .btn-lime { background: var(--lime); color: var(--text); }
 
-        /* --- DETAIL VIEWS (UNIFIED & CREATIVE) --- */
+        /* --- DETAIL VIEWS --- */
         .detail-view { display: none; padding: 120px 5%; max-width: 1200px; margin: 0 auto; animation: fadeIn 0.8s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
@@ -94,7 +94,7 @@
         .project-main-content i { display: block; border-left: 3px solid var(--lime); padding-left: 20px; margin: 30px 0; font-style: normal; opacity: 0.7; }
 
         .project-sidebar-visuals { position: sticky; top: 120px; }
-        .side-img { width: 100%; border-radius: 24px; margin-bottom: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .side-img { width: 100%; border-radius: 24px; margin-bottom: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); object-fit: cover; }
         
         /* --- SLIDER STYLES --- */
         .slider-wrap { position: relative; width: 100%; aspect-ratio: 1/1; border-radius: 24px; overflow: hidden; margin-bottom: 20px; }
@@ -128,7 +128,6 @@
         @media (max-width: 900px) {
             .project-layout { grid-template-columns: 1fr; }
             .project-sidebar-visuals { position: relative; top: 0; margin-top: 40px; }
-            .preview-card { height: 450px; }
         }
     </style>
 </head>
@@ -181,54 +180,46 @@
 
     <section id="tauschpunkt" class="detail-view">
         <span class="back-link" onclick="showOverview()">← Zurück zur Übersicht</span>
-        
         <div class="project-header">
             <h2>tauschpunkt<span>.</span></h2>
         </div>
-
         <div class="project-layout">
             <div class="project-main-content">
-                <h3>Konzeptbeschreibung:</h3>
+                <h3>Konzeptbeschreibung</h3>
                 <p>„tauschpunkt.“ steht für einfache Tausch-Stationen im öffentlichen Raum, an denen gebrauchte Alltagsgegenstände gratis weitergegeben werden können. Die Idee baut auf der bestehenden Praxis von „Gratis“-Objekten auf der Strasse auf und entwickelt sie weiter – mit wettergeschützter, klar gestalteter und legaler Infrastruktur.</p>
                 <p>Ein Netzwerk solcher Stationen fördert Ressourcenschonung, Kreislaufwirtschaft und nachbarschaftlichen Austausch. Gleichzeitig entsteht ein offenes Sharing-System für die ganze Stadt, das nachhaltiges Handeln sichtbar und einfach macht.</p>
                 <i>Das Konzept wurde im Rahmen einer Diplomarbeit im Studiengang HF Produktdesign an der SfGZ entwickelt.</i>
 
-                <h3>Vision tauschpunkt:</h3>
+                <h3>Vision tauschpunkt</h3>
                 <p>Eine Stadt, in der Teilen selbstverständlich ist: Öffentliche Tausch-Stationen machen es einfach, gebrauchte Dinge weiterzugeben statt wegzuwerfen – zugänglich für alle, mitten im Alltag.</p>
                 <p>So entsteht ein stadtweites Netzwerk, das Ressourcen schont, Abfall reduziert und Menschen verbindet. Aus spontanen Gesten wird eine gelebte Kultur des Teilens, die Nachbarschaften stärkt und neue Begegnungen ermöglicht.</p>
                 <p>Die Vision ist ein Zürich, in dem Kreislaufdenken sichtbar und erlebbar wird – praktisch, sozial und nachhaltig.</p>
                 
                 <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2298" target="_blank" class="detail-cta">Projekt unterstützen</a>
             </div>
-
             <div class="project-sidebar-visuals">
-                <img src="Bild.tauschpunkt1.png" class="side-img" alt="tauschpunkt Detail">
-                <img src="Bild.tauschpunkt1.png" class="side-img" style="transform: rotate(2deg);" alt="tauschpunkt Detail 2">
+                <img src="Bild.tauschpunkt1.png" class="side-img" alt="tauschpunkt Modell">
+                <img src="Bild.tauschpunkt2.png" class="side-img" style="transform: rotate(-1deg);" alt="tauschpunkt Detailansicht">
             </div>
         </div>
     </section>
 
     <section id="playground" class="detail-view">
         <span class="back-link" onclick="showOverview()">← Zurück zur Übersicht</span>
-        
         <div class="project-header">
             <h2>Playground<br>Binzallee<span>.</span></h2>
         </div>
-
         <div class="project-layout">
             <div class="project-main-content">
-                <h3>Ausgangslage</h3>
+                <h3>Konzeptbeschreibung</h3>
                 <p>Der bestehende Innenhof weist eine hohe Versiegelung, starke sommerliche Aufheizung und geringe Aufenthaltsqualität auf. Gleichzeitig besteht ein grosses Potenzial für eine klimawirksame und sozial aktivierende Veränderung dieser Fläche.</p>
-                
-                <h3>Projektidee</h3>
                 <p>Der Hof wird zu einem klimaaktiven, multifunktionalen Stadtraum entwickelt – durch die Kombination von klimawirksamer Bodenfläche (helle Farben zur Reduktion der Oberflächentemperatur) und einer schwebenden Begrünungsstruktur. Eine bepflanzte Seilstruktur auf ca. 6–7 m Höhe bildet eine horizontale „grüne Decke“ aus Kletterpflanzen, die für Verschattung und Verdunstungskühlung sorgt.</p>
                 
-                <h3>Wirkung & Ziel</h3>
+                <h3>Vision Playground</h3>
                 <p>Das Projekt reduziert Hitzeinseln und verbessert das Mikroklima nachhaltig. Es transformiert einen reinen Durchgangsraum in einen lebendigen, generationenübergreifenden Treffpunkt und schafft eine neue dreidimensionale Raumqualität im Quartier.</p>
                 
                 <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2334" target="_blank" class="detail-cta">Jetzt Voten</a>
             </div>
-
             <div class="project-sidebar-visuals">
                 <div class="slider-wrap">
                     <img src="IMG_2031.png" class="slider-img">
@@ -240,7 +231,6 @@
                     </div>
                     <input type="range" min="0" max="100" value="50" class="slider-input" oninput="moveSlider(this.value)">
                 </div>
-                <p style="font-size: 0.8rem; opacity: 0.5; text-align: center;">Interaktive Transformation (Slider nutzen)</p>
             </div>
         </div>
     </section>
