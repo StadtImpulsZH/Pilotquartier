@@ -78,7 +78,17 @@
         
         .preview-card h2 { font-family: 'Space Grotesk'; color: white; font-size: 2.5rem; margin-bottom: 10px; line-height: 1.1; }
         .preview-card p { color: rgba(255,255,255,0.8); margin-bottom: 20px; font-size: 1.1rem; }
-        .btn-discover { display: inline-block; padding: 12px 30px; background: white; color: var(--text); border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; }
+        
+        /* Karten Buttons */
+        .card-actions { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px; }
+        .btn-discover, .btn-vote-small { 
+            display: inline-block; padding: 12px 20px; border-radius: 50px; 
+            font-weight: 800; text-transform: uppercase; font-size: 0.75rem; 
+            text-decoration: none; text-align: center; flex: 1; min-width: 120px;
+        }
+        .btn-discover { background: white; color: var(--text); }
+        .btn-vote-small { background: var(--lime); color: var(--text); transition: 0.3s; }
+        .btn-vote-small:hover { background: var(--purple); color: white; }
 
         /* --- DETAIL-ANSICHTEN --- */
         .detail-view { display: none; padding: 120px 5% 50px; max-width: 1200px; margin: 0 auto; animation: slideUp 0.6s ease forwards; }
@@ -103,20 +113,21 @@
         .carousel { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; margin-top: 40px; }
         .carousel img { height: 400px; min-width: 300px; border-radius: 20px; object-fit: cover; flex-shrink: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
-        /* --- VERGLEICHS-SLIDER (CLIP-PATH MIT BUTTON) --- */
+        /* --- VERGLEICHS-SLIDER (CLIP-PATH MIT MODERNEM BUTTON) --- */
         .slider-container { position: relative; width: 100%; aspect-ratio: 16/9; margin: 50px auto; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
         .slider-img-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
         .slider-img-front { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); }
         
         .slider-line { position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: white; transform: translateX(-50%); pointer-events: none; z-index: 5; }
         
-        /* Der neue Schiebe-Button */
+        /* Der neue, moderne Schiebe-Button mit SVG Pfeilen */
         .slider-button { 
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-            width: 46px; height: 46px; background: white; border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-size: 1.2rem; font-weight: 800; color: var(--purple);
+            width: 44px; height: 44px; background: white; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; gap: 2px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); color: var(--purple);
         }
+        .slider-button svg { width: 18px; height: 18px; stroke: currentColor; }
 
         .slider-input { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 10; margin: 0; }
 
@@ -144,8 +155,9 @@
         /* Mobile Optimierung */
         @media (max-width: 900px) { 
             .bg-gray { grid-template-columns: 1fr; }
-            .preview-card { height: 400px; padding: 25px; }
+            .preview-card { height: 420px; padding: 25px; }
             .preview-card h2 { font-size: 2rem; }
+            .card-actions { flex-direction: column; gap: 10px; }
             .detail-content { grid-template-columns: 1fr; } 
             .carousel img { height: 300px; min-width: 250px; }
         }
@@ -182,14 +194,20 @@
                 <img src="Bild.tauschpunkt1.png" alt="tauschpunkt.">
                 <h2>tauschpunkt.</h2>
                 <p>Einfache Tausch-Stationen für eine sichtbare Kreislaufwirtschaft im Quartier.</p>
-                <div><span class="btn-discover">Projekt Entdecken</span></div>
+                <div class="card-actions">
+                    <span class="btn-discover">Entdecken</span>
+                    <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2298" target="_blank" class="btn-vote-small" onclick="event.stopPropagation()">Jetzt Voten</a>
+                </div>
             </div>
 
             <div class="preview-card" onclick="openProject('playground')">
                 <img src="IMG_2031.png" alt="Playground Binzallee">
                 <h2>Playground<br>Binzallee</h2>
                 <p>Klimaresiliente Umgestaltung durch schwebende Begrünung.</p>
-                <div><span class="btn-discover">Projekt Entdecken</span></div>
+                <div class="card-actions">
+                    <span class="btn-discover">Entdecken</span>
+                    <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2334" target="_blank" class="btn-vote-small" onclick="event.stopPropagation()">Jetzt Voten</a>
+                </div>
             </div>
         </section>
     </div>
@@ -258,7 +276,10 @@
             <img src="IMG_2032.png" class="slider-img-front" id="slider-front" alt="Vorher">
             
             <div class="slider-line" id="slider-line">
-                <div class="slider-button">↔</div>
+                <div class="slider-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </div>
             </div>
             
             <input type="range" min="0" max="100" value="50" class="slider-input" oninput="moveSlider(this.value)">
