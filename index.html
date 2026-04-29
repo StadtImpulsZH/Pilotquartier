@@ -74,7 +74,7 @@
         .btn-white { background: white; color: var(--text); }
         .btn-lime { background: var(--lime); color: var(--text); }
 
-        /* --- DETAIL VIEWS (PROJEKTE) --- */
+        /* --- DETAIL VIEWS --- */
         .detail-view { display: none; padding: 120px 5%; max-width: 1200px; margin: 0 auto; animation: fadeIn 0.8s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
@@ -82,12 +82,12 @@
         .project-header h2 { font-family: 'Space Grotesk'; font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9; margin-bottom: 20px; }
         .project-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: start; }
         .project-main-content h3 { font-family: 'Space Grotesk'; font-size: 1.8rem; margin: 40px 0 20px; color: var(--purple); position: relative; }
-        .project-main-content p { font-size: 1.2rem; margin-bottom: 25px; color: #333; }
-        .project-main-content i { display: block; border-left: 3px solid var(--lime); padding-left: 20px; margin: 30px 0; font-style: normal; opacity: 0.7; }
+        .project-main-content p { font-size: 1.1rem; margin-bottom: 25px; color: #333; text-align: justify; }
+        .project-main-content i { display: block; border-left: 3px solid var(--lime); padding-left: 20px; margin: 30px 0; font-style: normal; opacity: 0.7; font-size: 0.95rem; }
         
         .project-sidebar-visuals { position: sticky; top: 120px; }
 
-        /* --- KARUSSELL & SLIDER --- */
+        /* --- VISUALS (KARUSSELL / SLIDER) --- */
         .carousel-container { position: relative; width: 100%; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .carousel-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s; }
         .carousel-slide.active { opacity: 1; z-index: 1; }
@@ -104,13 +104,11 @@
         .slider-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .slider-input { position: absolute; inset: 0; opacity: 0; cursor: ew-resize; width: 100%; }
 
-        /* --- MITWIRKEN (PROZESS NEU) --- */
+        /* --- MITWIRKEN (PROZESS) --- */
         #mitwirken { padding: 120px 5%; background: var(--gray); text-align: center; }
         .mitwirken-container { max-width: 1100px; margin: 0 auto; }
-        
         .process-path { display: flex; justify-content: space-between; align-items: flex-start; position: relative; margin: 80px 0; }
         .process-path::before { content: ''; position: absolute; top: 45px; left: 10%; right: 10%; height: 2px; background: #ddd; z-index: 0; }
-        
         .process-step { flex: 1; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
         .step-icon { width: 90px; height: 90px; background: var(--gray); border: 2px solid #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin-bottom: 20px; position: relative; z-index: 2; }
         .step-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; color: #333; max-width: 150px; background: var(--gray); padding: 5px 10px; position: relative; z-index: 2; }
@@ -118,13 +116,15 @@
         @media (max-width: 768px) {
             .process-path { flex-direction: column; align-items: center; gap: 60px; }
             .process-path::before { top: 0; bottom: 0; left: 50%; width: 2px; height: 100%; transform: translateX(-50%); }
-            .step-icon, .step-label { background: var(--gray); }
             .project-layout { grid-template-columns: 1fr; }
             .project-sidebar-visuals { position: relative; top: 0; }
         }
 
-        .vision-container { max-width: 850px; margin: 100px auto; text-align: left; }
-        .vision-container h2 { font-family: 'Space Grotesk'; font-size: 2.5rem; margin-bottom: 30px; color: var(--purple); }
+        /* --- VISION --- */
+        #vision { padding: 120px 5%; background: white; }
+        .vision-container { max-width: 850px; margin: 0 auto; text-align: left; }
+        .vision-container h2 { font-family: 'Space Grotesk'; font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 40px; color: var(--purple); }
+        .vision-container p { font-size: 1.15rem; margin-bottom: 25px; line-height: 1.8; color: #333; text-align: justify; }
 
         footer { padding: 80px 5%; text-align: center; font-size: 0.75rem; opacity: 0.3; text-transform: uppercase; border-top: 1px solid #f0f0f0; }
     </style>
@@ -177,23 +177,22 @@
             <div class="mitwirken-container">
                 <h2>Mitwirken.</h2>
                 <p>Hast Du etwas in Deinem Kreis oder Quartier neu, weiter oder zu Ende gedacht? <br>Bringe Deine Idee ein. Züri mitentwickeln und präge!</p>
-                
                 <div class="process-path">
                     <div class="process-step"><div class="step-icon">✨</div><div class="step-label">Teile Deine Vision</div></div>
                     <div class="process-step"><div class="step-icon">🔥</div><div class="step-label">Erwecke Faszination</div></div>
                     <div class="process-step"><div class="step-icon">🤝</div><div class="step-label">Finde Mitbestreiter</div></div>
                     <div class="process-step"><div class="step-icon">🏙️</div><div class="step-label">Präge das Stadtleben</div></div>
                 </div>
-                
-                <a href="mailto:stadt@impulzh.com" class="btn-s btn-lime" style="padding: 20px 40px;">Idee einreichen</a>
+                <a href="mailto:stadt@impulzh.com" class="btn-s btn-lime" style="padding: 20px 40px; text-decoration: none; display: inline-block;">Idee einreichen</a>
             </div>
         </section>
 
         <section id="vision">
             <div class="vision-container">
                 <h2>VISION stadt.impulzh</h2>
-                <p>Stadt.Impulzh wird zur digitalen Plattform, auf der aus Ideen echte Veränderung entsteht. Hier treffen sich Menschen aus Zürich, die ihre Stadt aktiv mitgestalten wollen – offen, kreativ und gemeinschaftlich.</p>
-                <p>Unser Ziel ist eine Plattform, die nicht nur Ideen sammelt, sondern Menschen aktiviert. Denn jede Idee zählt – und gemeinsam entsteht daraus ein besseres Zürich.</p>
+                <p>Stadt.Impulzh wird zur digitalen Plattform, auf der aus Ideen echte Veränderung entsteht. Hier treffen sich Menschen aus Zürich, die ihre Stadt aktiv mitgestalten wollen – offen, kreativ und gemeinschaftlich. Die Website inspiriert dazu, Potenziale im eigenen Quartier zu erkennen und mutig neu zu denken.</p>
+                <p>Sie macht Visionen sichtbar, verbindet Gleichgesinnte und gibt Projekten den Raum, zu wachsen – von der ersten Idee bis zur Umsetzung. Ob es um nachhaltige Mobilität, lebendige Begegnungsräume oder soziale Initiativen geht: Stadt.Impulzh fördert den Austausch, bündelt Kräfte und bringt Bewegung in die Stadtentwicklung.</p>
+                <p>Unser Ziel ist eine Plattform, die nicht nur Ideen sammelt, sondern Menschen aktiviert. Eine digitale Heimat für alle, die Zürich lebenswerter, vielfältiger und zukunftsfähiger machen wollen. Denn jede Idee zählt – und gemeinsam entsteht daraus ein besseres Zürich.</p>
             </div>
         </section>
     </div>
@@ -204,19 +203,34 @@
         <div class="project-layout">
             <div class="project-main-content">
                 <h3>Konzeptbeschreibung</h3>
-                <p>„tauschpunkt.“ steht für einfache Tausch-Stationen im öffentlichen Raum, an denen gebrauchte Alltagsgegenstände gratis weitergegeben werden können. Wettergeschützt, klar gestaltet und legal.</p>
-                <i>Das Konzept wurde im Rahmen einer Diplomarbeit an der SfGZ entwickelt.</i>
+                <p>„tauschpunkt.“ steht für einfache Tausch-Stationen im öffentlichen Raum, an denen gebrauchte Alltagsgegenstände gratis weitergegeben werden können. Die Idee baut auf der bestehenden Praxis von „Gratis“-Objekten auf der Strasse auf und entwickelt sie weiter – mit wettergeschützter, klar gestalteter und legaler Infrastruktur.</p>
+                <p>Ein Netzwerk solcher Stationen fördert Ressourcenschonung, Kreislaufwirtschaft und nachbarschaftlichen Austausch. Gleichzeitig entsteht ein offenes Sharing-System für die ganze Stadt, das nachhaltiges Handeln sichtbar und einfach macht.</p>
+                <i>Das Konzept wurde im Rahmen einer Diplomarbeit im Studiengang HF Produktdesign an der SfGZ entwickelt.</i>
+                
                 <h3>Vision tauschpunkt</h3>
-                <p>Eine Stadt, in der Teilen selbstverständlich ist: Öffentliche Tausch-Stationen machen es einfach, gebrauchte Dinge weiterzugeben statt wegzuwerfen.</p>
-                <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2298" target="_blank" class="btn-s btn-lime">Projekt unterstützen</a>
+                <p>Eine Stadt, in der Teilen selbstverständlich ist: Öffentliche Tausch-Stationen machen es einfach, gebrauchte Dinge weiterzugeben statt wegzuwerfen – zugänglich für alle, mitten im Alltag.</p>
+                <p>So entsteht ein stadtweites Netzwerk, das Ressourcen schont, Abfall reduziert und Menschen verbindet. Aus spontanen Gesten wird eine gelebte Kultur des Teilens, die Nachbarschaften stärkt und neue Begegnungen ermöglicht.</p>
+                <p>Die Vision ist ein Zürich, in dem Kreislaufdenken sichtbar und erlebbar wird – praktisch, sozial und nachhaltig.</p>
+                <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2298" target="_blank" class="btn-s btn-lime" style="text-decoration: none; display: inline-block;">Projekt unterstützen</a>
             </div>
             <div class="project-sidebar-visuals">
                 <div class="carousel-container">
                     <div class="carousel-slides">
-                        <img src="Bild.tauschpunkt1.png" class="carousel-slide active"><img src="Bild.tauschpunkt2.png" class="carousel-slide"><img src="Bild.tauschpunkt3.png" class="carousel-slide"><img src="Bild.tauschpunkt4.png" class="carousel-slide"><img src="Bild.tauschpunkt5.png" class="carousel-slide">
+                        <img src="Bild.tauschpunkt1.png" class="carousel-slide active">
+                        <img src="Bild.tauschpunkt2.png" class="carousel-slide">
+                        <img src="Bild.tauschpunkt3.png" class="carousel-slide">
+                        <img src="Bild.tauschpunkt4.png" class="carousel-slide">
+                        <img src="Bild.tauschpunkt5.png" class="carousel-slide">
                     </div>
-                    <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button><button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
-                    <div class="carousel-dots"><span class="dot active" onclick="setCarouselSlide(0)"></span><span class="dot" onclick="setCarouselSlide(1)"></span><span class="dot" onclick="setCarouselSlide(2)"></span><span class="dot" onclick="setCarouselSlide(3)"></span><span class="dot" onclick="setCarouselSlide(4)"></span></div>
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="setCarouselSlide(0)"></span>
+                        <span class="dot" onclick="setCarouselSlide(1)"></span>
+                        <span class="dot" onclick="setCarouselSlide(2)"></span>
+                        <span class="dot" onclick="setCarouselSlide(3)"></span>
+                        <span class="dot" onclick="setCarouselSlide(4)"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -228,14 +242,17 @@
         <div class="project-layout">
             <div class="project-main-content">
                 <h3>Konzeptbeschreibung</h3>
-                <p>Der Hof wird zu einem klimaaktiven Stadtraum entwickelt – durch helle Farben zur Temperaturreduktion und eine schwebende grüne Seilstruktur.</p>
+                <p>Der bestehende Innenhof weist eine hohe Versiegelung, starke sommerliche Aufheizung und geringe Aufenthaltsqualität auf. Gleichzeitig besteht ein grosses Potenzial für eine klimawirksame und sozial aktivierende Veränderung dieser Fläche.</p>
+                <p>Der Hof wird zu einem klimaaktiven, multifunktionalen Stadtraum entwickelt – durch die Kombination von klimawirksamer Bodenfläche (helle Farben zur Reduktion der Oberflächentemperatur) und einer schwebenden Begrünungsstruktur. Eine bepflanzte Seilstruktur auf ca. 6–7 m Höhe bildet eine horizontale „grüne Decke“ aus Kletterpflanzen, die für Verschattung und Verdunstungskühlung sorgt.</p>
+                
                 <h3>Vision Playground</h3>
-                <p>Das Projekt reduziert Hitzeinseln und transformiert einen reinen Durchgangsraum in einen lebendigen Treffpunkt.</p>
-                <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2334" target="_blank" class="btn-s btn-lime">Jetzt Voten</a>
+                <p>Das Projekt reduziert Hitzeinseln und verbessert das Mikroklima nachhaltig. Es transformiert einen reinen Durchgangsraum in einen lebendigen, generationenübergreifenden Treffpunkt und schafft eine neue dreidimensionale Raumqualität im Quartier.</p>
+                <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2334" target="_blank" class="btn-s btn-lime" style="text-decoration: none; display: inline-block;">Jetzt Voten</a>
             </div>
             <div class="project-sidebar-visuals">
                 <div class="slider-wrap">
-                    <img src="IMG_2031.png" class="slider-img"><img src="IMG_2032.png" class="slider-img" id="slider-front">
+                    <img src="IMG_2031.png" class="slider-img">
+                    <img src="IMG_2032.png" class="slider-img" id="slider-front">
                     <div class="slider-bar" id="slider-line"><div class="slider-handle">↔</div></div>
                     <input type="range" min="0" max="100" value="50" class="slider-input" oninput="moveSlider(this.value)">
                 </div>
