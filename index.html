@@ -67,8 +67,10 @@
         }
         .preview-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: 0.6s; }
         .preview-card:hover img { transform: scale(1.05); }
-        .preview-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); z-index: -1; }
-        .preview-card h2 { font-family: 'Space Grotesk'; color: white; font-size: 2.5rem; margin-bottom: 20px; }
+        .preview-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 80%); z-index: -1; }
+        
+        .preview-card h2 { font-family: 'Space Grotesk'; color: white; font-size: 2.5rem; margin-bottom: 10px; }
+        .preview-card .catcher { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 25px; max-width: 90%; font-weight: 500; }
         
         .card-btns { display: flex; gap: 10px; }
         .btn-s { padding: 12px 24px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 0.75rem; text-decoration: none; border: none; cursor: pointer; }
@@ -94,7 +96,7 @@
 
         .project-sidebar-visuals { position: sticky; top: 120px; }
 
-        /* --- KARUSSELL (NEU) --- */
+        /* --- KARUSSELL --- */
         .carousel-container { position: relative; width: 100%; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .carousel-slides { width: 100%; height: 100%; position: relative; }
         .carousel-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s ease-in-out; }
@@ -121,12 +123,18 @@
         .detail-cta { margin-top: 40px; display: inline-block; padding: 20px 40px; border-radius: 50px; background: var(--purple); color: white; text-decoration: none; font-weight: 800; text-transform: uppercase; transition: 0.3s; }
 
         /* --- MITWIRKEN --- */
-        #mitwirken { padding: 120px 5%; background: var(--gray); }
-        .mitwirken-container { max-width: 900px; margin: 0 auto; text-align: center; }
-        .mitwirken-container h2 { font-family: 'Space Grotesk'; font-size: clamp(3rem, 8vw, 4.5rem); margin-bottom: 30px; }
-        .modern-list { list-style: none; display: inline-block; text-align: left; margin: 40px 0; }
-        .modern-list li { font-size: 1.5rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 20px; }
-        .modern-list li::before { content: ''; width: 30px; height: 4px; background: var(--lime); display: inline-block; border-radius: 2px; }
+        #mitwirken { padding: 120px 5%; background: var(--gray); overflow: hidden; }
+        .mitwirken-container { max-width: 1000px; margin: 0 auto; text-align: center; }
+        .mitwirken-tag { display: inline-block; padding: 8px 20px; background: white; border-radius: 50px; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--purple); margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .mitwirken-container h2 { font-family: 'Space Grotesk'; font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 30px; line-height: 1; }
+        .mitwirken-intro { font-size: 1.2rem; max-width: 700px; margin: 0 auto 60px; color: #555; }
+
+        .action-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .action-card { background: white; padding: 40px 20px; border-radius: 24px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; align-items: center; gap: 15px; cursor: default; }
+        .action-card:hover { transform: translateY(-10px); background: var(--purple); color: white; }
+        .action-card span { font-weight: 800; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .action-card .icon-circle { width: 50px; height: 50px; border-radius: 50%; background: var(--gray); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: 0.3s; }
+        .action-card:hover .icon-circle { background: rgba(255,255,255,0.2); transform: rotate(15deg); }
 
         /* --- VISION SEKTION --- */
         #vision { padding: 140px 5%; background: white; }
@@ -172,6 +180,7 @@
             <div class="preview-card" onclick="openProject('tauschpunkt')">
                 <img src="Bild.tauschpunkt1.png" alt="tauschpunkt.">
                 <h2>tauschpunkt.</h2>
+                <p class="catcher">Teilen statt Wegwerfen – Das Netzwerk für nachhaltige Kreislaufwirtschaft im Quartier.</p>
                 <div class="card-btns">
                     <span class="btn-s btn-white">Entdecken</span>
                     <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2298" target="_blank" class="btn-s btn-lime" onclick="event.stopPropagation()">Voten</a>
@@ -181,6 +190,7 @@
             <div class="preview-card" onclick="openProject('playground')">
                 <img src="IMG_2031.png" alt="Playground">
                 <h2>Playground<br>Binzallee</h2>
+                <p class="catcher">Klimaaktive Stadtoase – Ein versiegelter Innenhof verwandelt sich in einen kühlen Treffpunkt.</p>
                 <div class="card-btns">
                     <span class="btn-s btn-white">Entdecken</span>
                     <a href="https://mitwirken.stadt-zuerich.ch/processes/pilotquartier/f/664/proposals/2334" target="_blank" class="btn-s btn-lime" onclick="event.stopPropagation()">Voten</a>
@@ -265,16 +275,32 @@
 
     <section id="mitwirken">
         <div class="mitwirken-container">
-            <h2>Mitwirken.</h2>
-            <p>Hast Du etwas in Deinem Kreis oder Quartier neu, weiter oder zu Ende gedacht? Mehr Potenzial erkannt? <br>Bringe Deine Idee ein. Züri mitentwickeln und prägen!</p>
-            <ul class="modern-list">
-                <li>Teile Deine Vision</li>
-                <li>Erwecke Faszination</li>
-                <li>Finde Mitbestreiter</li>
-                <li>Präge das Stadtleben</li>
-            </ul>
+            <div class="mitwirken-tag">Open Space Impulse St.Zürich</div>
+            <h2>Hast Du etwas in Deinem Kreis oder Quartier neu-weiter-zuende-gedacht?</h2>
+            <p class="mitwirken-intro">Mehr Potenzial erkannt? Bringe Deine Idee zu Themen wie; Gestaltung. Begegnung. Klima. Qualität. Bewegung. Mobilität. Sozialprojekte. Unterhaltung. Uvm.. Züri mitentwickle und präge, jede Ahstoss zellt zumne no bessere Züri</p>
+            
+            <div class="action-grid">
+                <div class="action-card">
+                    <div class="icon-circle">✨</div>
+                    <span>Teile Deine Vision</span>
+                </div>
+                <div class="action-card">
+                    <div class="icon-circle">🔥</div>
+                    <span>Erwecke Faszination</span>
+                </div>
+                <div class="action-card">
+                    <div class="icon-circle">🤝</div>
+                    <span>Finde Mitbestreiter</span>
+                </div>
+                <div class="action-card">
+                    <div class="icon-circle">🏙️</div>
+                    <span>Präge das Stadtleben</span>
+                </div>
+            </div>
+
             <div style="margin-top: 40px;">
-                <a href="mailto:stadt@impulzh.com" class="detail-cta">Idee einreichen</a>
+                <p style="margin-bottom: 20px; opacity: 0.6; font-weight: 800;">@stadtimpulzh.ch</p>
+                <a href="mailto:stadt@impulzh.com" class="detail-cta">stadt@impulzh.com</a>
             </div>
         </div>
     </section>
@@ -308,37 +334,24 @@
             document.getElementById('overview-section').style.display = 'block';
             window.scrollTo(0,0);
         }
-        
-        /* Playground Vorher/Nachher Slider */
         function moveSlider(val) {
             document.getElementById('slider-front').style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
             document.getElementById('slider-line').style.left = `${val}%`;
         }
-
-        /* Tauschpunkt Bilder Karussell */
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
-
         function showSlide(index) {
             if (index >= slides.length) currentSlide = 0;
             else if (index < 0) currentSlide = slides.length - 1;
             else currentSlide = index;
-
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
         }
-
-        function moveCarousel(step) {
-            showSlide(currentSlide + step);
-        }
-
-        function setCarouselSlide(index) {
-            showSlide(index);
-        }
+        function moveCarousel(step) { showSlide(currentSlide + step); }
+        function setCarouselSlide(index) { showSlide(index); }
     </script>
 </body>
 </html>
