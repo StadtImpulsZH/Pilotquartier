@@ -100,7 +100,8 @@
         .dot { width: 12px; height: 12px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; }
         .dot.active { background: white; transform: scale(1.2); }
 
-        .slider-wrap { position: relative; width: 100%; aspect-ratio: 1/1; border-radius: 24px; overflow: hidden; }
+        /* VORHER-NACHHER SLIDER */
+        .slider-wrap { position: relative; width: 100%; aspect-ratio: 1/1; border-radius: 24px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .slider-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
         #slider-front { clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); }
         .slider-bar { position: absolute; top: 0; left: 50%; width: 1px; height: 100%; background: rgba(255,255,255,0.8); transform: translateX(-50%); pointer-events: none; }
@@ -110,7 +111,7 @@
         .slider-handle::after { transform: translateX(6px); }
         .slider-input { position: absolute; inset: 0; opacity: 0; cursor: ew-resize; width: 100%; z-index: 10; }
 
-        /* --- MITWIRKEN (NEU) --- */
+        /* --- MITWIRKEN --- */
         #mitwirken { padding: 120px 5%; background: var(--gray); text-align: center; }
         .mitwirken-container { max-width: 900px; margin: 0 auto; }
         .mitwirken-tag { font-family: 'Space Grotesk'; font-size: 1.2rem; color: var(--purple); margin-bottom: 10px; font-weight: 800; display: block; }
@@ -267,6 +268,15 @@
                     <div class="slider-bar" id="slider-line"><div class="slider-handle"></div></div>
                     <input type="range" min="0" max="100" value="50" class="slider-input" oninput="moveSlider(this.value)">
                 </div>
+
+                <div class="carousel-container" id="playground-carousel">
+                    <div class="carousel-slides">
+                        <img src="IMG_2034.png" class="carousel-slide active">
+                        <img src="IMG_2033.png" class="carousel-slide">
+                    </div>
+                    <button class="carousel-btn prev" onclick="movePlaygroundCarousel(-1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="movePlaygroundCarousel(1)">&#10095;</button>
+                </div>
             </div>
         </div>
     </section>
@@ -293,10 +303,12 @@
             document.getElementById('slider-front').style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
             document.getElementById('slider-line').style.left = `${val}%`;
         }
+
+        // Tauschpunkt Carousel Logic
         let currentSlide = 0;
         function showSlide(index) {
-            const slides = document.querySelectorAll('.carousel-slide');
-            const dots = document.querySelectorAll('.dot');
+            const slides = document.querySelectorAll('#tauschpunkt .carousel-slide');
+            const dots = document.querySelectorAll('#tauschpunkt .dot');
             if (index >= slides.length) currentSlide = 0;
             else if (index < 0) currentSlide = slides.length - 1;
             else currentSlide = index;
@@ -307,6 +319,17 @@
         }
         function moveCarousel(n) { showSlide(currentSlide + n); }
         function setCarouselSlide(n) { showSlide(n); }
+
+        // Playground Carousel Logic (Extra Bilder)
+        let pgCurrentSlide = 0;
+        function movePlaygroundCarousel(n) {
+            const slides = document.querySelectorAll('#playground-carousel .carousel-slide');
+            pgCurrentSlide += n;
+            if (pgCurrentSlide >= slides.length) pgCurrentSlide = 0;
+            if (pgCurrentSlide < 0) pgCurrentSlide = slides.length - 1;
+            slides.forEach(s => s.classList.remove('active'));
+            slides[pgCurrentSlide].classList.add('active');
+        }
     </script>
 </body>
 </html>
